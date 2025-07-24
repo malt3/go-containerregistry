@@ -24,12 +24,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/google/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/name"
 )
 
-var (
-	testRegistry, _ = name.NewRegistry("localhost:8080", name.StrictValidation)
-)
+var testRegistry, _ = name.NewRegistry("localhost:8080", name.StrictValidation)
 
 func TestPingNoChallenge(t *testing.T) {
 	server := httptest.NewServer(

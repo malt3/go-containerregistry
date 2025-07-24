@@ -17,28 +17,25 @@ package crane_test
 import (
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/crane"
-	"github.com/google/go-containerregistry/pkg/v1/empty"
-	"github.com/google/go-containerregistry/pkg/v1/mutate"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/pkg/crane"
+	"github.com/malt3/go-containerregistry/pkg/v1/empty"
+	"github.com/malt3/go-containerregistry/pkg/v1/mutate"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 )
 
 func TestAppendWithOCIBaseImage(t *testing.T) {
 	base := mutate.MediaType(empty.Image, types.OCIManifestSchema1)
 	img, err := crane.Append(base, "testdata/content.tar")
-
 	if err != nil {
 		t.Fatalf("crane.Append(): %v", err)
 	}
 
 	layers, err := img.Layers()
-
 	if err != nil {
 		t.Fatalf("img.Layers(): %v", err)
 	}
 
 	mediaType, err := layers[0].MediaType()
-
 	if err != nil {
 		t.Fatalf("layers[0].MediaType(): %v", err)
 	}
@@ -50,19 +47,16 @@ func TestAppendWithOCIBaseImage(t *testing.T) {
 
 func TestAppendWithDockerBaseImage(t *testing.T) {
 	img, err := crane.Append(empty.Image, "testdata/content.tar")
-
 	if err != nil {
 		t.Fatalf("crane.Append(): %v", err)
 	}
 
 	layers, err := img.Layers()
-
 	if err != nil {
 		t.Fatalf("img.Layers(): %v", err)
 	}
 
 	mediaType, err := layers[0].MediaType()
-
 	if err != nil {
 		t.Fatalf("layers[0].MediaType(): %v", err)
 	}
@@ -75,19 +69,16 @@ func TestAppendWithDockerBaseImage(t *testing.T) {
 func TestAppendWithZstd(t *testing.T) {
 	base := mutate.MediaType(empty.Image, types.OCIManifestSchema1)
 	img, err := crane.Append(base, "testdata/content.tar.zst")
-
 	if err != nil {
 		t.Fatalf("crane.Append(): %v", err)
 	}
 
 	layers, err := img.Layers()
-
 	if err != nil {
 		t.Fatalf("img.Layers(): %v", err)
 	}
 
 	mediaType, err := layers[0].MediaType()
-
 	if err != nil {
 		t.Fatalf("layers[0].MediaType(): %v", err)
 	}

@@ -17,9 +17,9 @@ package compare
 import (
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/v1/mutate"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/pkg/v1/mutate"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 )
 
 func TestDifferentImages(t *testing.T) {

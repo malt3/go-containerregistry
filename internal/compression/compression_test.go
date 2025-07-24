@@ -19,13 +19,15 @@ import (
 	"io"
 	"testing"
 
-	"github.com/google/go-containerregistry/internal/and"
-	"github.com/google/go-containerregistry/internal/gzip"
-	"github.com/google/go-containerregistry/internal/zstd"
+	"github.com/malt3/go-containerregistry/internal/and"
+	"github.com/malt3/go-containerregistry/internal/gzip"
+	"github.com/malt3/go-containerregistry/internal/zstd"
 )
 
-type Compressor = func(rc io.ReadCloser) io.ReadCloser
-type Decompressor = func(rc io.ReadCloser) (io.ReadCloser, error)
+type (
+	Compressor   = func(rc io.ReadCloser) io.ReadCloser
+	Decompressor = func(rc io.ReadCloser) (io.ReadCloser, error)
+)
 
 func testPeekCompression(t *testing.T,
 	compressionExpected string,

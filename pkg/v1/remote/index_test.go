@@ -24,9 +24,9 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 )
 
 func randomIndex(t *testing.T) v1.ImageIndex {
@@ -260,25 +260,26 @@ func TestMatchesPlatform(t *testing.T) {
 		given    v1.Platform
 		required v1.Platform
 		want     bool
-	}{{ // The given & required platforms are identical. matchesPlatform expected to return true.
-		given: v1.Platform{
-			Architecture: "amd64",
-			OS:           "linux",
-			OSVersion:    "10.0.10586",
-			OSFeatures:   []string{"win32k"},
-			Variant:      "armv6l",
-			Features:     []string{"sse4"},
+	}{
+		{ // The given & required platforms are identical. matchesPlatform expected to return true.
+			given: v1.Platform{
+				Architecture: "amd64",
+				OS:           "linux",
+				OSVersion:    "10.0.10586",
+				OSFeatures:   []string{"win32k"},
+				Variant:      "armv6l",
+				Features:     []string{"sse4"},
+			},
+			required: v1.Platform{
+				Architecture: "amd64",
+				OS:           "linux",
+				OSVersion:    "10.0.10586",
+				OSFeatures:   []string{"win32k"},
+				Variant:      "armv6l",
+				Features:     []string{"sse4"},
+			},
+			want: true,
 		},
-		required: v1.Platform{
-			Architecture: "amd64",
-			OS:           "linux",
-			OSVersion:    "10.0.10586",
-			OSFeatures:   []string{"win32k"},
-			Variant:      "armv6l",
-			Features:     []string{"sse4"},
-		},
-		want: true,
-	},
 		{ // OS and Architecture must exactly match. matchesPlatform expected to return false.
 			given: v1.Platform{
 				Architecture: "arm",

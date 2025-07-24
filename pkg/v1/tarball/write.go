@@ -25,9 +25,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/google/go-containerregistry/pkg/name"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/partial"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/partial"
 )
 
 // WriteToFile writes in the compressed format to a tarball, on disk.
@@ -345,10 +345,10 @@ func dedupRefToImage(refToImage map[name.Reference]v1.Image) map[v1.Image][]stri
 				imageToTags[img] = []string{}
 			}
 			// Docker cannot load tarballs without an explicit tag:
-			// https://github.com/google/go-containerregistry/issues/890
+			// https://github.com/malt3/go-containerregistry/issues/890
 			//
 			// We can't use the fully qualified tag.Name() because of rules_docker:
-			// https://github.com/google/go-containerregistry/issues/527
+			// https://github.com/malt3/go-containerregistry/issues/527
 			//
 			// If the tag is "latest", but tag.String() doesn't end in ":latest",
 			// just append it. Kind of gross, but should work for now.
@@ -368,7 +368,7 @@ func dedupRefToImage(refToImage map[name.Reference]v1.Image) map[v1.Image][]stri
 // writeTarEntry writes a file to the provided writer with a corresponding tar header
 func writeTarEntry(tf *tar.Writer, path string, r io.Reader, size int64) error {
 	hdr := &tar.Header{
-		Mode:     0644,
+		Mode:     0o644,
 		Typeflag: tar.TypeReg,
 		Size:     size,
 		Name:     path,
@@ -388,10 +388,12 @@ func ComputeManifest(refToImage map[name.Reference]v1.Image) (Manifest, error) {
 }
 
 // WriteOption a function option to pass to Write()
-type WriteOption func(*writeOptions) error
-type writeOptions struct {
-	updates chan<- v1.Update
-}
+type (
+	WriteOption  func(*writeOptions) error
+	writeOptions struct {
+		updates chan<- v1.Update
+	}
+)
 
 // WithProgress create a WriteOption for passing to Write() that enables
 // a channel to receive updates as they are downloaded and written to disk.

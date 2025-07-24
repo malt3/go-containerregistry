@@ -15,7 +15,7 @@
 package remote
 
 import (
-	"github.com/google/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/name"
 )
 
 // Delete removes the specified image reference from the remote registry.

@@ -1,4 +1,4 @@
-module github.com/google/go-containerregistry
+module github.com/malt3/go-containerregistry
 
 go 1.24
 

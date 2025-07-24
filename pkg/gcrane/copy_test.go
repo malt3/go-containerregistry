@@ -30,16 +30,16 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/google/go-containerregistry/internal/retry"
-	"github.com/google/go-containerregistry/pkg/logs"
-	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/google/go-containerregistry/pkg/registry"
-	"github.com/google/go-containerregistry/pkg/v1/google"
-	"github.com/google/go-containerregistry/pkg/v1/partial"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/remote"
-	"github.com/google/go-containerregistry/pkg/v1/remote/transport"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/internal/retry"
+	"github.com/malt3/go-containerregistry/pkg/logs"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/registry"
+	"github.com/malt3/go-containerregistry/pkg/v1/google"
+	"github.com/malt3/go-containerregistry/pkg/v1/partial"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote/transport"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 )
 
 type fakeXCR struct {
@@ -301,7 +301,7 @@ func TestDiffImages(t *testing.T) {
 			"a": {
 				Size:      123,
 				MediaType: string(types.DockerManifestSchema2),
-				Created:   time.Date(1992, time.January, 7, 6, 40, 00, 5e8, time.UTC),
+				Created:   time.Date(1992, time.January, 7, 6, 40, 0o0, 5e8, time.UTC),
 				Uploaded:  time.Date(2018, time.November, 29, 4, 13, 30, 5e8, time.UTC),
 				Tags:      []string{"b", "c", "d"},
 			},
@@ -311,7 +311,7 @@ func TestDiffImages(t *testing.T) {
 			"a": {
 				Size:      123,
 				MediaType: string(types.DockerManifestSchema2),
-				Created:   time.Date(1992, time.January, 7, 6, 40, 00, 5e8, time.UTC),
+				Created:   time.Date(1992, time.January, 7, 6, 40, 0o0, 5e8, time.UTC),
 				Uploaded:  time.Date(2018, time.November, 29, 4, 13, 30, 5e8, time.UTC),
 				Tags:      []string{"b", "c", "d"},
 			},

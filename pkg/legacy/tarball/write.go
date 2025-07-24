@@ -23,11 +23,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/google/go-containerregistry/pkg/legacy"
-	"github.com/google/go-containerregistry/pkg/name"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/partial"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/pkg/legacy"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/partial"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
 )
 
 // repositoriesTarDescriptor represents the repositories file inside a `docker save` tarball.
@@ -358,7 +358,7 @@ func dedupRefToImage(refToImage map[name.Reference]v1.Image) ([]v1.Image, map[v1
 // Writes a file to the provided writer with a corresponding tar header
 func writeTarEntry(tf *tar.Writer, path string, r io.Reader, size int64) error {
 	hdr := &tar.Header{
-		Mode:     0644,
+		Mode:     0o644,
 		Typeflag: tar.TypeReg,
 		Size:     size,
 		Name:     path,

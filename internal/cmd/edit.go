@@ -26,16 +26,16 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/google/go-containerregistry/internal/editor"
-	"github.com/google/go-containerregistry/internal/verify"
-	"github.com/google/go-containerregistry/pkg/crane"
-	"github.com/google/go-containerregistry/pkg/name"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/mutate"
-	"github.com/google/go-containerregistry/pkg/v1/remote"
-	"github.com/google/go-containerregistry/pkg/v1/static"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/internal/editor"
+	"github.com/malt3/go-containerregistry/internal/verify"
+	"github.com/malt3/go-containerregistry/pkg/crane"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/mutate"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote"
+	"github.com/malt3/go-containerregistry/pkg/v1/static"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 	"github.com/spf13/cobra"
 )
 
@@ -214,7 +214,7 @@ func editConfig(ctx context.Context, in io.Reader, out io.Writer, src, dst strin
 
 	// this has to happen before we modify the descriptor (so we can use verify.Descriptor to validate whether m.Config.Data matches m.Config.Digest/Size)
 	if config.Data != nil && verify.Descriptor(config) == nil {
-		// https://github.com/google/go-containerregistry/issues/1552#issuecomment-1452653875
+		// https://github.com/malt3/go-containerregistry/issues/1552#issuecomment-1452653875
 		// "if data is non-empty and correct, we should update it"
 		config.Data = edited
 	}
@@ -465,7 +465,7 @@ func blankHeader(name string) *tar.Header {
 		// Use a fixed Mode, so that this isn't sensitive to the directory and umask
 		// under which it was created. Additionally, windows can only set 0222,
 		// 0444, or 0666, none of which are executable.
-		Mode: 0555,
+		Mode: 0o555,
 	}
 }
 

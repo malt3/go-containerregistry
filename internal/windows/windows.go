@@ -23,9 +23,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/google/go-containerregistry/internal/gzip"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/internal/gzip"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
 )
 
 // userOwnerAndGroupSID is a magic value needed to make the binary executable
@@ -55,7 +55,7 @@ func Windows(layer v1.Layer) (v1.Layer, error) {
 			// Use a fixed Mode, so that this isn't sensitive to the directory and umask
 			// under which it was created. Additionally, windows can only set 0222,
 			// 0444, or 0666, none of which are executable.
-			Mode:   0555,
+			Mode:   0o555,
 			Format: tar.FormatPAX,
 		}); err != nil {
 			return nil, fmt.Errorf("writing %s directory: %w", dir, err)

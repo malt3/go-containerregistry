@@ -23,11 +23,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/google/go-containerregistry/pkg/registry"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/remote"
-	"github.com/google/go-containerregistry/pkg/v1/remote/transport"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/registry"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote/transport"
 )
 
 func TestStatusCodeReturned(t *testing.T) {
@@ -56,7 +56,6 @@ func TestStatusCodeReturned(t *testing.T) {
 			defer o.Close()
 
 			ref, err := name.NewDigest(strings.TrimPrefix(o.URL+"/foo@sha256:53b27244ffa2f585799adbfaf79fba5a5af104597751b289c8b235e7b8f7ebf5", "http://"))
-
 			if err != nil {
 				t.Fatalf("Unable to parse digest: %v", err)
 			}

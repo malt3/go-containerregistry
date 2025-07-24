@@ -28,16 +28,16 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/authn"
-	"github.com/google/go-containerregistry/pkg/crane"
-	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/google/go-containerregistry/pkg/registry"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/compare"
-	"github.com/google/go-containerregistry/pkg/v1/empty"
-	"github.com/google/go-containerregistry/pkg/v1/mutate"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/remote"
+	"github.com/malt3/go-containerregistry/pkg/authn"
+	"github.com/malt3/go-containerregistry/pkg/crane"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/registry"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/compare"
+	"github.com/malt3/go-containerregistry/pkg/v1/empty"
+	"github.com/malt3/go-containerregistry/pkg/v1/mutate"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote"
 )
 
 // TODO(jonjohnsonjr): Test crane.Copy failures.

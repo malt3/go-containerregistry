@@ -18,12 +18,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/google/go-containerregistry/pkg/crane"
-	"github.com/google/go-containerregistry/pkg/name"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/layout"
-	"github.com/google/go-containerregistry/pkg/v1/partial"
-	"github.com/google/go-containerregistry/pkg/v1/remote"
+	"github.com/malt3/go-containerregistry/pkg/crane"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/layout"
+	"github.com/malt3/go-containerregistry/pkg/v1/partial"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote"
 	"github.com/spf13/cobra"
 )
 
@@ -71,7 +71,7 @@ func NewCmdPush(options *[]crane.Option) *cobra.Command {
 
 			digest := ref.Context().Digest(h.String())
 			if imageRefs != "" {
-				if err := os.WriteFile(imageRefs, []byte(digest.String()), 0600); err != nil {
+				if err := os.WriteFile(imageRefs, []byte(digest.String()), 0o600); err != nil {
 					return fmt.Errorf("failed to write image refs to %s: %w", imageRefs, err)
 				}
 			}

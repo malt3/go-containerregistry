@@ -22,15 +22,15 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/google/go-containerregistry/pkg/registry"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/compare"
-	"github.com/google/go-containerregistry/pkg/v1/partial"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/remote"
-	"github.com/google/go-containerregistry/pkg/v1/types"
-	"github.com/google/go-containerregistry/pkg/v1/validate"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/registry"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/compare"
+	"github.com/malt3/go-containerregistry/pkg/v1/partial"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/pkg/v1/validate"
 )
 
 // Remote leverages a lot of compressed partials.
@@ -110,18 +110,23 @@ type noDiffID struct {
 func (l *noDiffID) Digest() (v1.Hash, error) {
 	return l.l.Digest()
 }
+
 func (l *noDiffID) Compressed() (io.ReadCloser, error) {
 	return l.l.Compressed()
 }
+
 func (l *noDiffID) Size() (int64, error) {
 	return l.l.Size()
 }
+
 func (l *noDiffID) MediaType() (types.MediaType, error) {
 	return l.l.MediaType()
 }
+
 func (l *noDiffID) Descriptor() (*v1.Descriptor, error) {
 	return partial.Descriptor(l.l)
 }
+
 func (l *noDiffID) UncompressedSize() (int64, error) {
 	return partial.UncompressedSize(l.l)
 }

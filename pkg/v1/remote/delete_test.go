@@ -21,7 +21,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/name"
 )
 
 func TestDelete(t *testing.T) {

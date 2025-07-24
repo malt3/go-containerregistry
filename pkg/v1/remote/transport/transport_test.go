@@ -25,13 +25,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/authn"
-	"github.com/google/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/authn"
+	"github.com/malt3/go-containerregistry/pkg/name"
 )
 
-var (
-	testReference, _ = name.NewTag("localhost:8080/user/image:latest", name.StrictValidation)
-)
+var testReference, _ = name.NewTag("localhost:8080/user/image:latest", name.StrictValidation)
 
 func TestTransportNoActionIfTransportIsAlreadyWrapper(t *testing.T) {
 	server := httptest.NewServer(
@@ -152,7 +150,7 @@ func TestTransportSelectionBearer(t *testing.T) {
 					t.Errorf("FormValue(scope); got %v, want %v", got, want)
 				}
 				// Check that the service isn't set (we didn't specify it above)
-				// https://github.com/google/go-containerregistry/issues/1359
+				// https://github.com/malt3/go-containerregistry/issues/1359
 				if got, want := r.FormValue("service"), ""; got != want {
 					t.Errorf("FormValue(service); got %q, want %q", got, want)
 				}

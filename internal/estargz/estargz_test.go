@@ -22,7 +22,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/go-containerregistry/internal/gzip"
+	"github.com/malt3/go-containerregistry/internal/gzip"
 )
 
 func TestReader(t *testing.T) {
@@ -84,9 +84,7 @@ func TestReader(t *testing.T) {
 	}
 }
 
-var (
-	errRead = fmt.Errorf("Read failed")
-)
+var errRead = fmt.Errorf("Read failed")
 
 type failReader struct{}
 

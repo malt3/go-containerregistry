@@ -18,14 +18,14 @@ import (
 	"fmt"
 	"os"
 
-	comp "github.com/google/go-containerregistry/internal/compression"
-	"github.com/google/go-containerregistry/internal/windows"
-	"github.com/google/go-containerregistry/pkg/compression"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/mutate"
-	"github.com/google/go-containerregistry/pkg/v1/stream"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	comp "github.com/malt3/go-containerregistry/internal/compression"
+	"github.com/malt3/go-containerregistry/internal/windows"
+	"github.com/malt3/go-containerregistry/pkg/compression"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/mutate"
+	"github.com/malt3/go-containerregistry/pkg/v1/stream"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 )
 
 func isWindows(img v1.Image) (bool, error) {

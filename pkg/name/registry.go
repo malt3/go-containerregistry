@@ -39,10 +39,12 @@ type Registry struct {
 	registry string
 }
 
-var _ encoding.TextMarshaler = (*Registry)(nil)
-var _ encoding.TextUnmarshaler = (*Registry)(nil)
-var _ json.Marshaler = (*Registry)(nil)
-var _ json.Unmarshaler = (*Registry)(nil)
+var (
+	_ encoding.TextMarshaler   = (*Registry)(nil)
+	_ encoding.TextUnmarshaler = (*Registry)(nil)
+	_ json.Marshaler           = (*Registry)(nil)
+	_ json.Unmarshaler         = (*Registry)(nil)
+)
 
 // RegistryStr returns the registry component of the Registry.
 func (r Registry) RegistryStr() string {
@@ -132,7 +134,7 @@ func NewRegistry(name string, opts ...Option) (Registry, error) {
 		name = opt.defaultRegistry
 	}
 	// Rewrite "docker.io" to "index.docker.io".
-	// See: https://github.com/google/go-containerregistry/issues/68
+	// See: https://github.com/malt3/go-containerregistry/issues/68
 	if name == defaultRegistryAlias {
 		name = DefaultRegistry
 	}

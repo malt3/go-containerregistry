@@ -19,10 +19,10 @@ import (
 	"io"
 	"testing"
 
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/mutate"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/validate"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/mutate"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/validate"
 )
 
 func TestImage(t *testing.T) {
@@ -113,8 +113,10 @@ func TestCacheShortCircuit(t *testing.T) {
 
 var fakeHash = v1.Hash{Algorithm: "fake", Hex: "data"}
 
-type fakeLayer struct{ v1.Layer }
-type fakeImage struct{ v1.Image }
+type (
+	fakeLayer struct{ v1.Layer }
+	fakeImage struct{ v1.Image }
+)
 
 func (f *fakeImage) LayerByDigest(v1.Hash) (v1.Layer, error) {
 	return nil, errors.New("LayerByDigest was called")

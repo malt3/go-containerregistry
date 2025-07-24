@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/google/go-containerregistry/pkg/v1/layout"
+	"github.com/malt3/go-containerregistry/pkg/v1/layout"
 	"github.com/spf13/cobra"
 )
 
@@ -41,7 +41,6 @@ func newCmdGc() *cobra.Command {
 			path := args[0]
 
 			p, err := layout.FromPath(path)
-
 			if err != nil {
 				return err
 			}

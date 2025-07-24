@@ -24,7 +24,7 @@ import (
 	"github.com/docker/cli/cli/config"
 	"github.com/docker/cli/cli/config/configfile"
 	"github.com/docker/cli/cli/config/types"
-	"github.com/google/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/name"
 	"github.com/mitchellh/go-homedir"
 )
 
@@ -57,10 +57,8 @@ type defaultKeychain struct {
 	mu sync.Mutex
 }
 
-var (
-	// DefaultKeychain implements Keychain by interpreting the docker config file.
-	DefaultKeychain = &defaultKeychain{}
-)
+// DefaultKeychain implements Keychain by interpreting the docker config file.
+var DefaultKeychain = &defaultKeychain{}
 
 const (
 	// DefaultAuthKey is the key used for dockerhub in config files, which
@@ -159,7 +157,7 @@ func (dk *defaultKeychain) ResolveContext(_ context.Context, target Resource) (A
 		}
 		// cf.GetAuthConfig automatically sets the ServerAddress attribute. Since
 		// we don't make use of it, clear the value for a proper "is-empty" test.
-		// See: https://github.com/google/go-containerregistry/issues/1510
+		// See: https://github.com/malt3/go-containerregistry/issues/1510
 		cfg.ServerAddress = ""
 		if cfg != empty {
 			break

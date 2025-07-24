@@ -24,8 +24,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/registry"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/registry"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
 )
 
 const (
@@ -535,7 +535,6 @@ func TestCalls(t *testing.T) {
 
 		var logger *log.Logger
 		testf := func(t *testing.T) {
-
 			opts := []registry.Option{registry.WithReferrersSupport(true)}
 			if logger != nil {
 				opts = append(opts, registry.Logger(logger))

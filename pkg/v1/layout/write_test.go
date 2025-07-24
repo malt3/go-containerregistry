@@ -24,14 +24,14 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/empty"
-	"github.com/google/go-containerregistry/pkg/v1/match"
-	"github.com/google/go-containerregistry/pkg/v1/mutate"
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/stream"
-	"github.com/google/go-containerregistry/pkg/v1/types"
-	"github.com/google/go-containerregistry/pkg/v1/validate"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/empty"
+	"github.com/malt3/go-containerregistry/pkg/v1/match"
+	"github.com/malt3/go-containerregistry/pkg/v1/mutate"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/stream"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/pkg/v1/validate"
 )
 
 func TestWrite(t *testing.T) {
@@ -461,7 +461,7 @@ func TestStreamingWriteLayer(t *testing.T) {
 			body := "test file"
 			if err := tw.WriteHeader(&tar.Header{
 				Name:     "test.txt",
-				Mode:     0600,
+				Mode:     0o600,
 				Size:     int64(len(body)),
 				Typeflag: tar.TypeReg,
 			}); err != nil {

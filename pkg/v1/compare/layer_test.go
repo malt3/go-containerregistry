@@ -17,8 +17,8 @@ package compare
 import (
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/v1/random"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/pkg/v1/random"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 )
 
 func TestDifferentLayers(t *testing.T) {

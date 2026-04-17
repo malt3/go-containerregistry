@@ -20,9 +20,9 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/google/go-containerregistry/internal/gzip"
-	"github.com/google/go-containerregistry/internal/zstd"
-	"github.com/google/go-containerregistry/pkg/compression"
+	"github.com/malt3/go-containerregistry/internal/gzip"
+	"github.com/malt3/go-containerregistry/internal/zstd"
+	"github.com/malt3/go-containerregistry/pkg/compression"
 )
 
 // Opener represents e.g. opening a file.
@@ -87,7 +87,7 @@ func intoPeekReader(r io.Reader) PeekReader {
 func checkHeader(pr PeekReader, expectedHeader []byte) (bool, PeekReader, error) {
 	header, err := pr.Peek(len(expectedHeader))
 	if err != nil {
-		// https://github.com/google/go-containerregistry/issues/367
+		// https://github.com/malt3/go-containerregistry/issues/367
 		if err == io.EOF {
 			return false, pr, nil
 		}

@@ -28,10 +28,10 @@ import (
 	"github.com/moby/moby/api/types/storage"
 	"github.com/moby/moby/client"
 
-	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/google/go-containerregistry/pkg/v1/compare"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
-	"github.com/google/go-containerregistry/pkg/v1/validate"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/v1/compare"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/pkg/v1/validate"
 )
 
 var imagePath = "../tarball/testdata/test_image_1.tar"

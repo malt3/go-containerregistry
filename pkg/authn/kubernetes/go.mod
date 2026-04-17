@@ -1,4 +1,4 @@
-module github.com/google/go-containerregistry/pkg/authn/kubernetes
+module github.com/malt3/go-containerregistry/pkg/authn/kubernetes
 
 // The go directive declares the minimum Go version required for this module.
 //
@@ -7,11 +7,11 @@ module github.com/google/go-containerregistry/pkg/authn/kubernetes
 // and releases, update the ".go-version" file at the root of this repository.
 go 1.25.0
 
-replace github.com/google/go-containerregistry => ../../../
+replace github.com/malt3/go-containerregistry => ../../../
 
 require (
 	github.com/google/go-cmp v0.7.0
-	github.com/google/go-containerregistry v0.21.2
+	github.com/malt3/go-containerregistry v0.21.2
 	k8s.io/api v0.35.3
 	k8s.io/apimachinery v0.35.3
 	k8s.io/client-go v0.35.3

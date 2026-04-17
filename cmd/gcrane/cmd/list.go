@@ -20,10 +20,10 @@ import (
 	"fmt"
 	"path"
 
-	"github.com/google/go-containerregistry/cmd/crane/cmd"
-	"github.com/google/go-containerregistry/pkg/gcrane"
-	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/google/go-containerregistry/pkg/v1/google"
+	"github.com/malt3/go-containerregistry/cmd/crane/cmd"
+	"github.com/malt3/go-containerregistry/pkg/gcrane"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/v1/google"
 	"github.com/spf13/cobra"
 )
 

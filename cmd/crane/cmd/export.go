@@ -20,9 +20,9 @@ import (
 	"log"
 	"os"
 
-	"github.com/google/go-containerregistry/pkg/crane"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/pkg/crane"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
 	"github.com/spf13/cobra"
 )
 

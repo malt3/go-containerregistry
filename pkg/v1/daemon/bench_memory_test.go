@@ -19,7 +19,7 @@ package daemon
 import (
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/name"
 )
 
 const benchImage = "elasticsearch:9.0.3"

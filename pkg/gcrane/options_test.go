@@ -19,7 +19,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/authn"
+	"github.com/malt3/go-containerregistry/pkg/authn"
 )
 
 func TestOptions(t *testing.T) {

@@ -21,7 +21,7 @@ import (
 	"os"
 	"path/filepath"
 
-	v1 "github.com/google/go-containerregistry/pkg/v1"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
 )
 
 type diskHandler struct {

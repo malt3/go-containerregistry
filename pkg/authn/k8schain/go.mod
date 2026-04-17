@@ -1,4 +1,4 @@
-module github.com/google/go-containerregistry/pkg/authn/k8schain
+module github.com/malt3/go-containerregistry/pkg/authn/k8schain
 
 // The go directive declares the minimum Go version required for this module.
 //
@@ -8,15 +8,15 @@ module github.com/google/go-containerregistry/pkg/authn/k8schain
 go 1.25.0
 
 replace (
-	github.com/google/go-containerregistry => ../../../
-	github.com/google/go-containerregistry/pkg/authn/kubernetes => ../kubernetes/
+	github.com/malt3/go-containerregistry => ../../../
+	github.com/malt3/go-containerregistry/pkg/authn/kubernetes => ../kubernetes/
 )
 
 require (
 	github.com/awslabs/amazon-ecr-credential-helper/ecr-login v0.12.0
 	github.com/gaganhr94/docker-credential-acr v1.0.2
-	github.com/google/go-containerregistry v0.21.5
-	github.com/google/go-containerregistry/pkg/authn/kubernetes v0.0.0-20250225234217-098045d5e61f
+	github.com/malt3/go-containerregistry v0.21.5
+	github.com/malt3/go-containerregistry/pkg/authn/kubernetes v0.0.0-20250225234217-098045d5e61f
 	k8s.io/api v0.35.3
 	k8s.io/client-go v0.35.3
 )

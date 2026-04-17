@@ -22,7 +22,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/google/go-containerregistry/internal/gzip"
+	"github.com/malt3/go-containerregistry/internal/gzip"
 )
 
 func TestReader(t *testing.T) {

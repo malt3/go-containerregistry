@@ -22,9 +22,9 @@ import (
 	"math/rand"
 	"testing"
 
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/types"
-	"github.com/google/go-containerregistry/pkg/v1/validate"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/pkg/v1/validate"
 )
 
 func TestManifestAndConfig(t *testing.T) {

@@ -26,13 +26,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/go-containerregistry/internal/gzip"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/empty"
-	"github.com/google/go-containerregistry/pkg/v1/match"
-	"github.com/google/go-containerregistry/pkg/v1/partial"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/internal/gzip"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/empty"
+	"github.com/malt3/go-containerregistry/pkg/v1/match"
+	"github.com/malt3/go-containerregistry/pkg/v1/partial"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 )
 
 const whiteoutPrefix = ".wh."

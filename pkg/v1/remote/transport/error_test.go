@@ -236,7 +236,7 @@ func (e *errReadCloser) Close() error {
 }
 
 // TestRetryErrorRestoresBody is a regression test for
-// https://github.com/google/go-containerregistry/issues/2125.
+// https://github.com/malt3/go-containerregistry/issues/2125.
 // retryError must restore resp.Body after reading it so that a subsequent
 // CheckError call can still parse the structured registry error.
 func TestRetryErrorRestoresBody(t *testing.T) {

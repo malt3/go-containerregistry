@@ -17,7 +17,7 @@ package authn
 import (
 	"testing"
 
-	"github.com/google/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/name"
 )
 
 func TestMultiKeychain(t *testing.T) {

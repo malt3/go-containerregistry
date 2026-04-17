@@ -19,11 +19,11 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/google/go-containerregistry/cmd/crane/cmd"
-	gcmd "github.com/google/go-containerregistry/cmd/gcrane/cmd"
-	"github.com/google/go-containerregistry/pkg/crane"
-	"github.com/google/go-containerregistry/pkg/gcrane"
-	"github.com/google/go-containerregistry/pkg/logs"
+	"github.com/malt3/go-containerregistry/cmd/crane/cmd"
+	gcmd "github.com/malt3/go-containerregistry/cmd/gcrane/cmd"
+	"github.com/malt3/go-containerregistry/pkg/crane"
+	"github.com/malt3/go-containerregistry/pkg/gcrane"
+	"github.com/malt3/go-containerregistry/pkg/logs"
 	"github.com/spf13/cobra"
 )
 

@@ -24,9 +24,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/go-containerregistry/pkg/logs"
-	"github.com/google/go-containerregistry/pkg/name"
-	"github.com/google/go-containerregistry/pkg/v1/remote/internal/authchallenge"
+	"github.com/malt3/go-containerregistry/pkg/logs"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	"github.com/malt3/go-containerregistry/pkg/v1/remote/internal/authchallenge"
 )
 
 // 300ms is the default fallback period for go's DNS dialer but we could make this configurable.

@@ -25,10 +25,10 @@ import (
 
 	api "github.com/moby/moby/api/types/image"
 
-	"github.com/google/go-containerregistry/pkg/name"
-	v1 "github.com/google/go-containerregistry/pkg/v1"
-	"github.com/google/go-containerregistry/pkg/v1/tarball"
-	"github.com/google/go-containerregistry/pkg/v1/types"
+	"github.com/malt3/go-containerregistry/pkg/name"
+	v1 "github.com/malt3/go-containerregistry/pkg/v1"
+	"github.com/malt3/go-containerregistry/pkg/v1/tarball"
+	"github.com/malt3/go-containerregistry/pkg/v1/types"
 	specs "github.com/moby/docker-image-spec/specs-go/v1"
 )
 
@@ -147,7 +147,7 @@ func Image(ref name.Reference, options ...Option) (v1.Image, error) {
 	}
 
 	// Eagerly fetch Image ID to ensure it actually exists.
-	// https://github.com/google/go-containerregistry/issues/1186
+	// https://github.com/malt3/go-containerregistry/issues/1186
 	id, err := img.ConfigName()
 	if err != nil {
 		return nil, err

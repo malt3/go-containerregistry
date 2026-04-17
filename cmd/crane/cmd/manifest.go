@@ -17,7 +17,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/google/go-containerregistry/pkg/crane"
+	"github.com/malt3/go-containerregistry/pkg/crane"
 	"github.com/spf13/cobra"
 )
 

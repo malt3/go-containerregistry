@@ -18,7 +18,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/google/go-containerregistry/pkg/v1/layout"
+	"github.com/malt3/go-containerregistry/pkg/v1/layout"
 	"github.com/spf13/cobra"
 )
 
